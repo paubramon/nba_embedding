@@ -1,3 +1,4 @@
 # Do not add the following folders:
 tmp/*
 repor/*
+log/*

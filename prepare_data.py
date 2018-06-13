@@ -79,6 +79,7 @@ def remove_special_symbols(sentence):
     sentence = sentence.replace(u'\u0107', "c")  # Latin c with acute
     sentence = sentence.replace(u'\u010d', "c")  # Latin c with caron
     sentence = sentence.replace(u'\u0161', "s")  # Lation s with caron
+    sentence = sentence.replace(u'\u00e9', "e")  #
 
     return sentence.strip()
 
@@ -94,7 +95,7 @@ def preprocess_sentence(sent):
 
 filenameroot = 'Data/data'
 file_end = '.xlsx'
-num_files = 10
+num_files = 17
 files = [filenameroot + str(i + 1) + file_end for i in range(num_files)]
 
 player = []

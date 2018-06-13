@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2b680b6a-6d71-4990-9a98-62f549e5fa62" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/word2vec_basic.py" beforeDir="false" afterPath="$PROJECT_DIR$/word2vec_basic.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/word2vec_nba.py" beforeDir="false" afterPath="$PROJECT_DIR$/word2vec_nba.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,10 +28,10 @@
       <file leaf-file-name="word2vec_nba.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/word2vec_nba.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="448">
-              <caret line="73" column="104" selection-start-line="73" selection-start-column="104" selection-end-line="73" selection-end-column="104" />
+            <state relative-caret-position="360">
+              <caret line="106" column="91" selection-start-line="106" selection-start-column="91" selection-end-line="106" selection-end-column="91" />
               <folding>
-                <element signature="e#131#154#0" expanded="true" />
+                <element signature="e#160#183#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -41,8 +40,8 @@
       <file leaf-file-name="word2vec.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/word2vec.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2677">
-              <caret line="358" column="52" selection-start-line="358" selection-start-column="52" selection-end-line="358" selection-end-column="52" />
+            <state relative-caret-position="25">
+              <caret line="226" column="35" lean-forward="true" selection-start-line="226" selection-start-column="35" selection-end-line="226" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -50,8 +49,8 @@
       <file leaf-file-name="word2vec_basic.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/word2vec_basic.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="229">
-              <caret line="131" column="56" lean-forward="true" selection-start-line="131" selection-start-column="10" selection-end-line="131" selection-end-column="56" />
+            <state relative-caret-position="-23">
+              <caret line="219" column="2" lean-forward="true" selection-start-line="219" selection-start-column="2" selection-end-line="220" selection-end-column="33" />
               <folding>
                 <element signature="e#720#758#0" expanded="true" />
               </folding>
@@ -75,6 +74,8 @@
       <find>_word2id</find>
       <find>forward</find>
       <find>generate_batch</find>
+      <find>vocab_counts</find>
+      <find>valid_window</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -139,7 +140,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.word2vec_nba">
+  <component name="RunManager" selected="Python.word2vec_basic">
     <configuration name="prepare_data" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="03_Embeddings" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -201,8 +202,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.word2vec_nba" />
         <item itemvalue="Python.word2vec_basic" />
+        <item itemvalue="Python.word2vec_nba" />
         <item itemvalue="Python.prepare_data" />
       </list>
     </recent_temporary>
@@ -252,29 +253,29 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/word2vec_basic.py</url>
-          <line>120</line>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/word2vec_basic.py</url>
-          <line>82</line>
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/word2vec_basic.py</url>
-          <line>80</line>
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/word2vec_basic.py</url>
-          <line>81</line>
-          <option name="timeStamp" value="20" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/word2vec_nba.py</url>
-          <line>69</line>
+          <line>156</line>
           <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/word2vec_basic.py</url>
+          <line>128</line>
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/word2vec_basic.py</url>
+          <line>156</line>
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/word2vec_basic.py</url>
+          <line>131</line>
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/word2vec_basic.py</url>
+          <line>153</line>
+          <option name="timeStamp" value="35" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -284,7 +285,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="32" />
+      <option name="time" value="36" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -334,15 +335,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/word2vec.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2677">
-          <caret line="358" column="52" selection-start-line="358" selection-start-column="52" selection-end-line="358" selection-end-column="52" />
+        <state relative-caret-position="25">
+          <caret line="226" column="35" lean-forward="true" selection-start-line="226" selection-start-column="35" selection-end-line="226" selection-end-column="35" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/word2vec_basic.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="131" column="56" lean-forward="true" selection-start-line="131" selection-start-column="10" selection-end-line="131" selection-end-column="56" />
+        <state relative-caret-position="-23">
+          <caret line="219" column="2" lean-forward="true" selection-start-line="219" selection-start-column="2" selection-end-line="220" selection-end-column="33" />
           <folding>
             <element signature="e#720#758#0" expanded="true" />
           </folding>
@@ -351,10 +352,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/word2vec_nba.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="73" column="104" selection-start-line="73" selection-start-column="104" selection-end-line="73" selection-end-column="104" />
+        <state relative-caret-position="360">
+          <caret line="106" column="91" selection-start-line="106" selection-start-column="91" selection-end-line="106" selection-end-column="91" />
           <folding>
-            <element signature="e#131#154#0" expanded="true" />
+            <element signature="e#160#183#0" expanded="true" />
           </folding>
         </state>
       </provider>

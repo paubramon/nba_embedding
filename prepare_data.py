@@ -1,6 +1,10 @@
 import pandas as pd
 import re
-
+'''
+final_data2.csv -> - and + are untouched
+final_data3.csv -> - has been removed, but + is untouched
+final_data3.csv -> - and + were removed
+'''
 
 def remove_special_symbols(sentence):
     sentence = sentence.replace(u'\u2018', "'")  # left single quote mark
@@ -80,14 +84,18 @@ def remove_special_symbols(sentence):
     sentence = sentence.replace(u'\u010d', "c")  # Latin c with caron
     sentence = sentence.replace(u'\u0161', "s")  # Lation s with caron
     sentence = sentence.replace(u'\u00e9', "e")  #
+    sentence = sentence.replace(u'\u00ef', "i")  #
+    sentence = sentence.replace(u'\u00ed', "i")  #
+
 
     return sentence.strip()
 
+
 def preprocess_sentence(sent):
+    # Add spaces for some characters
+    sent = re.sub("([!|@#$%&/()=?^*,:;])", r' \1 ', sent)
     # Remove special symbols
     sent = re.sub("([!|\"@=?^*])", ' ', sent)
-    # Add spaces for other characters
-    sent = re.sub("([!|'@#$%&/()=?^*\-,.:;])", r' \1 ', sent)
     sent = sent.replace('  ', ' ')
 
     return sent.strip()
@@ -103,7 +111,8 @@ team = []
 position = []
 text_short = []
 text_long = []
-
+short_text_max = 0
+long_text_max = 0
 for file in files:
     data = pd.ExcelFile(file)
     df1 = data.parse('SheetJS')
@@ -125,14 +134,23 @@ for file in files:
 
             # Get short text
             text_s = match.group(4).strip().lower()
+            short_text_max = max(short_text_max, len(text_s))
             text_short.append(preprocess_sentence(text_s))
 
             # Get long text
             text_l = match.group(5).strip().lower()
+
+            long_text_max = max(long_text_max, len(text_l))
             text_long.append(preprocess_sentence(text_l))
 
             print('player: %s ; team: %s' % (player_name, team_name))
 
+# Create file with raw data
 final_data = pd.DataFrame(
     {'player': player, 'position': position, 'team': team, 'short_text': text_short, 'long_text': text_long})
-final_data.to_csv('final_data.csv', encoding='latin-1')
+final_data.to_csv('final_data2.csv', encoding='latin-1')
+
+print('Summary')
+print('Number of news analysed: {}'.format(len(player)))
+print('Short texts between up to {} characters'.format(short_text_max))
+print('Long texts between up to {} characters'.format(long_text_max))

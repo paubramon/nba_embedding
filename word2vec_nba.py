@@ -18,28 +18,50 @@ import math
 import matplotlib.pyplot as plt
 from sklearn.manifold import TSNE
 
-OUTPUT_FOLDER = 'results/results_complex_1st'
-DATAFILE = 'final_data.csv'
+OUTPUT_FOLDER = 'results/final_5'
+DATAFILE = 'final_data2.csv'
 USE_TEXT_COL = ['short_text', 'long_text']
 VOCABULARY_SIZE = 15000
 EMBEDDING_DIM = 200
-WINDOW_SIZE_HALF = 3  # Default size of the windows. This is the number of target words on each side of the context word.
-BATCH_SIZE = 16
+WINDOW_SIZE_HALF = 1  # Default size of the windows. This is the number of target words on each side of the context word.
+WINDOW_SPAN_HALF = 5  # Default span of the windows.
+BATCH_SIZE = 128
 NUM_NEGATIVE_EXAMPLES = 64
 VALIDATION_SIZE = 16
 VALIDATION_WINDOW = 100
 
 
+def print_config(folder):
+    configuration = """
+        OUTPUT_FOLDER = {}
+        DATAFILE = {}
+        USE_TEXT_COL = {}
+        VOCABULARY_SIZE = {}
+        EMBEDDING_DIM = {}
+        WINDOW_SIZE_HALF = {} 
+        WINDOW_SPAN_HALF = {} 
+        BATCH_SIZE = {}
+        NUM_NEGATIVE_EXAMPLES = {}
+        VALIDATION_SIZE = {}
+        VALIDATION_WINDOW = {}
+        """.format(OUTPUT_FOLDER, DATAFILE, str(USE_TEXT_COL), VOCABULARY_SIZE, EMBEDDING_DIM, WINDOW_SIZE_HALF,
+                   WINDOW_SPAN_HALF, BATCH_SIZE, NUM_NEGATIVE_EXAMPLES, VALIDATION_SIZE, VALIDATION_WINDOW)
+    with open(folder + "config.txt", "w") as text_file:
+        text_file.write(configuration)
+
+
 class word2vec(object):
     def __init__(self, data, vocabulary, reverse_vocabulary, embedding_dim=EMBEDDING_DIM, batch_size=BATCH_SIZE,
-                 window_size_half=WINDOW_SIZE_HALF, num_negative_examples=NUM_NEGATIVE_EXAMPLES,
-                 valid_size=VALIDATION_SIZE, valid_window=VALIDATION_WINDOW, output_folder=OUTPUT_FOLDER):
+                 window_size_half=WINDOW_SIZE_HALF, window_span_half=WINDOW_SPAN_HALF,
+                 num_negative_examples=NUM_NEGATIVE_EXAMPLES, valid_size=VALIDATION_SIZE,
+                 valid_window=VALIDATION_WINDOW, output_folder=OUTPUT_FOLDER):
         self.x_ids = data
         self.vocabulary = vocabulary
         self.reverse_vocabulary = reverse_vocabulary
         self.vocabulary_size = max(vocabulary.word_index.values())
         self.embedding_dim = embedding_dim
         self.window_size_half = window_size_half
+        self.window_span_half = window_span_half
         self.batch_size = batch_size
         self.num_negative_examples = num_negative_examples
         self.valid_size = valid_size
@@ -127,10 +149,12 @@ class word2vec(object):
             if self.index_word - self.window_size_half >= 0:
                 if self.index_word + self.window_size_half < len(self.x_ids[self.index_sent]):
                     self.batch_x[i] = self.x_ids[self.index_sent][self.index_word]
-                    self.batch_y[i, 0:self.window_size_half] = self.x_ids[self.index_sent][
-                                                               self.index_word - self.window_size_half:self.index_word]
-                    self.batch_y[i, self.window_size_half:] = self.x_ids[self.index_sent][
-                                                              self.index_word + 1:self.index_word + self.window_size_half + 1]
+                    span_l = self.x_ids[self.index_sent][
+                             max(0, self.index_word - self.window_span_half):self.index_word]
+                    self.batch_y[i, 0:self.window_size_half] = random.sample(span_l,self.window_size_half)
+                    span_r = self.x_ids[self.index_sent][self.index_word + 1:min(len(self.x_ids[self.index_sent]),
+                                                                                 self.index_word + self.window_span_half + 1)]
+                    self.batch_y[i, self.window_size_half:] = random.sample(span_r,self.window_size_half)
                     i += 1
                     self.index_word += 1
                 else:
@@ -177,7 +201,7 @@ class word2vec(object):
 
                 # Define training
                 with tf.name_scope('train'):
-                    #optimizer = tf.train.GradientDescentOptimizer(1.0)
+                    # optimizer = tf.train.GradientDescentOptimizer(1.0)
                     optimizer = tf.train.AdamOptimizer()
                     self.train_step = optimizer.minimize(self.loss)
 
@@ -194,7 +218,7 @@ class word2vec(object):
                 writer.add_graph(sess.graph)
 
                 # Step 5: Begin training.
-                num_steps = 200000
+                num_steps = 500000
 
                 average_loss = 0
                 for step in xrange(num_steps):
@@ -225,7 +249,7 @@ class word2vec(object):
                                                                                           self.epoch_counter)
                         print(output_log)
                         with open(self.output_folder + "/output_log.txt", "a") as myfile:
-                            myfile.write(output_log)
+                            myfile.write(output_log + '\n')
                         average_loss = 0
 
                     # Note that this is expensive
@@ -241,14 +265,17 @@ class word2vec(object):
                                 log_str = '%s %s,' % (log_str, close_word)
                             print(log_str)
                             with open(self.output_folder + "/output_log.txt", "a") as myfile:
-                                myfile.write(log_str)
+                                myfile.write(log_str + '\n')
 
                 self.final_embeddings = self.normalized_embedding.eval()
 
                 # Write corresponding labels for the embeddings.
                 with open(self.output_folder + '/metadata.tsv', 'w') as f:
                     for i in xrange(self.vocabulary_size):
-                        f.write(self.reverse_vocabulary[i + 1] + '\n')
+                        if i == 0:
+                            f.write('Labels' + '\n')
+                        else:
+                            f.write(self.reverse_vocabulary[i] + '\n')
 
                 # Save the model for checkpoints.
                 saver.save(sess, os.path.join(self.output_folder, 'model.ckpt'))
@@ -270,7 +297,7 @@ class word2vec(object):
 
 
 def prepare_data(datafile=DATAFILE, use_text_col=USE_TEXT_COL, output_path=OUTPUT_FOLDER,
-                 vocabulary_size=VOCABULARY_SIZE, store_vocabulary=True, subsample_most_frequent = True):
+                 vocabulary_size=VOCABULARY_SIZE, store_vocabulary=True, subsample_most_frequent=True):
     # Gather data
     data = pd.read_csv(datafile)
     sentences = []
@@ -278,7 +305,7 @@ def prepare_data(datafile=DATAFILE, use_text_col=USE_TEXT_COL, output_path=OUTPU
         sentences = sentences + list(data[col_text])
 
     # Generate vocabulary
-    vocabulary = Tokenizer(num_words=vocabulary_size, filters='!"%&()*,-./:;?@[\\]^_`{|}~\t\n')
+    vocabulary = Tokenizer(num_words=vocabulary_size, filters='!"%&()*,./:;?@[\\]^_{|}~\t\n')
     vocabulary.fit_on_texts(sentences)
     x_ids = vocabulary.texts_to_sequences(sentences)
 
@@ -289,19 +316,19 @@ def prepare_data(datafile=DATAFILE, use_text_col=USE_TEXT_COL, output_path=OUTPU
 
     if subsample_most_frequent:
         # Set a threshold such that the minimum probability is 0.5
-        max_count= max(vocabulary.word_counts.values())
+        max_count = max(vocabulary.word_counts.values())
         min_prob = 0.5
-        threshold = min_prob*min_prob/max_count
+        threshold = min_prob * min_prob / max_count
 
         # Get probabilities for all words
         p_drop = {}
         for key, val in vocabulary.word_index.iteritems():
-            p_drop[val] = 1 - math.sqrt(threshold*vocabulary.word_counts[key])
+            p_drop[val] = 1 - math.sqrt(threshold * vocabulary.word_counts[key])
 
         # Subsample words
         x_ids_sub = []
         for i in xrange(len(x_ids)):
-            x_ids_sub.append([word for word in x_ids[i] if p_drop[word]>np.random.random()])
+            x_ids_sub.append([word for word in x_ids[i] if p_drop[word] > np.random.random()])
         x_ids = x_ids_sub
         del x_ids_sub
 
@@ -316,6 +343,8 @@ def prepare_data(datafile=DATAFILE, use_text_col=USE_TEXT_COL, output_path=OUTPU
 def main():
     # Create folder if it doesn't exist
     pau_utils.create_folder(OUTPUT_FOLDER + '/')
+
+    print_config(OUTPUT_FOLDER + '/')
 
     x_ids, vocabulary, reverse_vocabulary = prepare_data()
     w2v = word2vec(x_ids, vocabulary, reverse_vocabulary)

@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2b680b6a-6d71-4990-9a98-62f549e5fa62" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/restore_embedding.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plot_tensorboard_image.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final_data.csv" beforeDir="false" afterPath="$PROJECT_DIR$/final_data.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/prepare_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/prepare_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results_simple/vocabulary" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/restore_embedding.py" beforeDir="false" afterPath="$PROJECT_DIR$/restore_embedding.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/word2vec_nba.py" beforeDir="false" afterPath="$PROJECT_DIR$/word2vec_nba.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,8 +20,8 @@
       <file leaf-file-name="prepare_data.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/prepare_data.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="961">
-              <caret line="134" selection-start-line="134" selection-end-line="134" />
+            <state relative-caret-position="-1458">
+              <caret line="12" column="72" selection-start-line="12" selection-start-column="72" selection-end-line="12" selection-end-column="72" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -30,11 +29,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="word2vec_nba.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="word2vec_nba.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/word2vec_nba.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="20" column="25" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
+            <state relative-caret-position="90">
+              <caret line="20" column="31" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="32" />
               <folding>
                 <element signature="e#160#183#0" expanded="true" />
               </folding>
@@ -42,11 +41,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="restore_embedding.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="run_.-tag-loss_1.csv" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/results/final_1/run_.-tag-loss_1.csv">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="plot_tensorboard_image.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/plot_tensorboard_image.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="342">
+              <caret line="21" column="40" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="restore_embedding.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/restore_embedding.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="990">
-              <caret line="59" column="16" selection-start-line="59" selection-start-column="16" selection-end-line="59" selection-end-column="16" />
+            <state relative-caret-position="288">
+              <caret line="79" column="21" lean-forward="true" selection-start-line="79" selection-start-column="21" selection-end-line="79" selection-end-column="21" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -57,8 +73,8 @@
       <file leaf-file-name="word2vec.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/word2vec.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5094">
-              <caret line="295" column="59" selection-start-line="295" selection-start-column="59" selection-end-line="295" selection-end-column="59" />
+            <state relative-caret-position="3870">
+              <caret line="308" selection-start-line="308" selection-end-line="308" />
             </state>
           </provider>
         </entry>
@@ -66,8 +82,8 @@
       <file leaf-file-name="word2vec_basic.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/word2vec_basic.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3834">
-              <caret line="231" column="25" selection-start-line="231" selection-start-column="25" selection-end-line="231" selection-end-column="25" />
+            <state relative-caret-position="188">
+              <caret line="316" selection-start-line="316" selection-end-line="316" />
               <folding>
                 <element signature="e#720#758#0" expanded="true" />
               </folding>
@@ -93,7 +109,6 @@
       <find>generate_batch</find>
       <find>vocab_counts</find>
       <find>valid_window</find>
-      <find>embeddings</find>
       <find>keep_dims</find>
       <find>keep</find>
       <find>sentence_counter</find>
@@ -101,10 +116,15 @@
       <find>index_sent</find>
       <find>save</find>
       <find>reverse_vocabulary</find>
+      <find>embeddings</find>
+      <find>low_dim_embs</find>
+      <find>fil</find>
+      <find>filename</find>
     </findStrings>
     <replaceStrings>
       <replace>self.index_word</replace>
       <replace>self.index_sent</replace>
+      <replace>low_dim_embs2</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -116,9 +136,11 @@
         <option value="$PROJECT_DIR$/extract_texts.py" />
         <option value="$PROJECT_DIR$/word2vec_basic.py" />
         <option value="$PROJECT_DIR$/prova.py" />
-        <option value="$PROJECT_DIR$/restore_embedding.py" />
+        <option value="$PROJECT_DIR$/prepare_data_preprocessed.py" />
         <option value="$PROJECT_DIR$/prepare_data.py" />
+        <option value="$PROJECT_DIR$/plot_tensorboard_image.py" />
         <option value="$PROJECT_DIR$/word2vec_nba.py" />
+        <option value="$PROJECT_DIR$/restore_embedding.py" />
       </list>
     </option>
   </component>
@@ -144,6 +166,11 @@
             <path>
               <item name="03_Embeddings" type="b2602c69:ProjectViewProjectNode" />
               <item name="03_Embeddings" type="462c0819:PsiDirectoryNode" />
+              <item name="results" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="03_Embeddings" type="b2602c69:ProjectViewProjectNode" />
+              <item name="03_Embeddings" type="462c0819:PsiDirectoryNode" />
               <item name="tmp" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -159,6 +186,11 @@
   <component name="PyConsoleOptionsProvider">
     <option name="myShowDebugConsoleByDefault" value="true" />
   </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -171,7 +203,25 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.word2vec_nba">
+  <component name="RunManager" selected="Python.restore_embedding">
+    <configuration name="plot_tensorboard_image" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="03_Embeddings" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/plot_tensorboard_image.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
     <configuration name="prepare_data" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="03_Embeddings" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -226,24 +276,6 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="word2vec_basic" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="03_Embeddings" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/word2vec_basic.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="true" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
     <configuration name="word2vec_nba" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="03_Embeddings" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -265,17 +297,17 @@
     <list>
       <item itemvalue="Python.prepare_data" />
       <item itemvalue="Python.word2vec_nba" />
-      <item itemvalue="Python.word2vec_basic" />
       <item itemvalue="Python.prova" />
       <item itemvalue="Python.restore_embedding" />
+      <item itemvalue="Python.plot_tensorboard_image" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.word2vec_nba" />
-        <item itemvalue="Python.prepare_data" />
         <item itemvalue="Python.restore_embedding" />
+        <item itemvalue="Python.word2vec_nba" />
+        <item itemvalue="Python.plot_tensorboard_image" />
+        <item itemvalue="Python.prepare_data" />
         <item itemvalue="Python.prova" />
-        <item itemvalue="Python.word2vec_basic" />
       </list>
     </recent_temporary>
   </component>
@@ -294,7 +326,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26065302" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -303,11 +334,11 @@
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5002767" side_tool="true" weight="0.3991323" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" weight="0.3286334" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.17462039" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.45553145" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.4997233" visible="true" weight="0.3991323" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4997233" weight="0.3991323" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -345,18 +376,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/word2vec_nba.py</url>
-          <line>232</line>
+          <line>256</line>
           <option name="timeStamp" value="49" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/restore_embedding.py</url>
-          <line>61</line>
-          <option name="timeStamp" value="63" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/restore_embedding.py</url>
-          <line>60</line>
-          <option name="timeStamp" value="64" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -366,7 +387,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="75" />
+      <option name="time" value="90" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -508,49 +529,89 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/prova.py" />
+    <entry file="file://$PROJECT_DIR$/prepare_data_preprocessed.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="344">
+          <caret line="136" selection-start-line="136" selection-end-line="136" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/word2vec_basic.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3834">
-          <caret line="231" column="25" selection-start-line="231" selection-start-column="25" selection-end-line="231" selection-end-column="25" />
+        <state relative-caret-position="188">
+          <caret line="316" selection-start-line="316" selection-end-line="316" />
           <folding>
             <element signature="e#720#758#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/final_data2.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/word2vec.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5094">
-          <caret line="295" column="59" selection-start-line="295" selection-start-column="59" selection-end-line="295" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/restore_embedding.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="990">
-          <caret line="59" column="16" selection-start-line="59" selection-start-column="16" selection-end-line="59" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="3870">
+          <caret line="308" selection-start-line="308" selection-end-line="308" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/prepare_data.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="961">
-          <caret line="134" selection-start-line="134" selection-end-line="134" />
+        <state relative-caret-position="-1458">
+          <caret line="12" column="72" selection-start-line="12" selection-start-column="72" selection-end-line="12" selection-end-column="72" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/word2vec_nba.py">
+    <entry file="file://$PROJECT_DIR$/results/final_1/run_.-tag-loss_1.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results/final_3/config.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" column="8" lean-forward="true" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results/final_2/config.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
-          <caret line="20" column="25" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
+          <caret line="6" column="29" lean-forward="true" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results/final_1/config.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plot_tensorboard_image.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="21" column="40" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/word2vec_nba.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="20" column="31" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="32" />
           <folding>
             <element signature="e#160#183#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/restore_embedding.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="79" column="21" lean-forward="true" selection-start-line="79" selection-start-column="21" selection-end-line="79" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
           </folding>
         </state>
       </provider>
